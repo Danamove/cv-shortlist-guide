@@ -11,7 +11,7 @@
   // The label is what shows in the drawer ("step map"). Keep ids contiguous from 0.
   var STEPS = [
     { id: 0, label: "פתיחה" },
-    { id: 1, label: "בונים מחוון סינון" },
+    { id: 1, label: "בונים טבלת קריטריונים" },
     { id: 2, label: "מזינים את הערימה" },
     { id: 3, label: "שורטליסט ובדיקת אמת" },
     { id: 4, label: "הופכים ל-Gem" },
@@ -86,15 +86,11 @@
     return true;
   }
 
-  /* ---- progress (real: based on checklist completion) ---- */
+  /* ---- progress (based on visited steps; intro not counted) ---- */
   function updateProgress() {
-    var boxes = allCheckboxes();
-    var total = boxes.length;
-    var done = 0;
-    boxes.forEach(function (cb) {
-      if (isChecked(parseInt(cb.getAttribute("data-step"), 10), indexWithinStep(cb))) done++;
-    });
-    var pct = total ? Math.round((done / total) * 100) : 0;
+    var countable = STEPS.filter(function (s) { return s.id !== 0; });
+    var done = countable.filter(function (s) { return stepDone(s.id); }).length;
+    var pct = countable.length ? Math.round((done / countable.length) * 100) : 0;
     if (elFill) elFill.style.width = pct + "%";
     if (elPText) elPText.textContent = T.percentDone(pct);
     if (elProgressBar) elProgressBar.setAttribute("aria-valuenow", String(pct));
@@ -250,12 +246,12 @@
     toast(T.reset);
   }
 
-  /* ---- finish (mark all checklist items done) ---- */
+  /* ---- finish (mark every step as visited) ---- */
   function finish() {
-    allCheckboxes().forEach(function (cb) {
-      cb.checked = true;
-      setChecked(cb.getAttribute("data-step"), indexWithinStep(cb), true);
+    STEPS.forEach(function (s) {
+      if (state.visited.indexOf(s.id) === -1) state.visited.push(s.id);
     });
+    save();
     updateProgress();
     renderNav();
     toast(T.finished);

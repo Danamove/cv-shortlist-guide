@@ -66,15 +66,18 @@ a { color: inherit; }
   max-width: 880px;
   margin: 0 auto;
   padding: 12px 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 14px;
 }
+.bx-top-inner .bx-menu { justify-self: start; }
+.bx-top-inner .bx-reset { justify-self: end; }
 .bx-brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
-  margin-inline: auto;
+  justify-self: center;
   min-width: 0;
 }
 .bx-brand-mark { color: var(--bx-violet); font-size: 13px; }
