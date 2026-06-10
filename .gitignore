@@ -1,0 +1,5 @@
+.playwright-cli/
+/hero.png
+/step3.png
+Thumbs.db
+.DS_Store

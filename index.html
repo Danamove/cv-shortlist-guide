@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מערימת קורות חיים לשורטליסט ב-10 דקות, עם Gemini</title>
+  <meta name="description" content="מדריך אינטראקטיבי למגייסות ומנהלות HR: בונים ב-Gemini ממיין קורות חיים אישי שהופך כל ערימת קבצים לשורטליסט מדורג.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237f4efd'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<header class="bx-top">
+  <div class="bx-top-inner">
+    <button class="bx-menu" id="bxMenu" aria-label="פתיחת מפת שלבים" aria-expanded="false">
+      <span class="bx-menu-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      מפת שלבים
+    </button>
+    <div class="bx-brand">
+      <img src="assets/addedvalue-logo.png" alt="AddedValue" style="height:30px;border-radius:7px;display:block">
+      <span class="bx-brand-sub">מדריך מעשי למגייסות</span>
+    </div>
+    <button class="bx-reset" id="bxReset" type="button">איפוס</button>
+  </div>
+  <div class="bx-progress" role="progressbar" aria-label="התקדמות" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="bx-progress-fill" id="bxProgressFill"></div>
+  </div>
+  <div class="bx-progress-meta"><span id="bxProgressText">0% הושלם</span></div>
+</header>
+
+<div class="bx-drawer-backdrop" id="bxBackdrop" hidden></div>
+<nav class="bx-drawer" id="bxDrawer" aria-label="מפת שלבים">
+  <div class="bx-drawer-title">מפת שלבים</div>
+  <ul class="bx-nav" id="bxNav"></ul>
+</nav>
+
+<main class="bx-main" id="bxMain">
+
+<!-- ===================== 0 · פתיחה ===================== -->
+<section class="bx-view is-on" id="v0" data-step="0">
+  <div class="bx-hero">
+    <span class="bx-eyebrow">מדריך אינטראקטיבי, עושים תוך כדי</span>
+    <h1 class="bx-hero-title">מערימת קורות חיים לשורטליסט <span class="bx-grad">ב-10 דקות</span></h1>
+    <p class="bx-hero-lead">120 קורות חיים על משרה אחת. חצי מהם נכתבו עם AI ונראים מושלמים על הנייר. אין סיכוי לעבור על כולם ברצינות, ובדיוק שם מפספסים את המועמד הנכון. במדריך הזה תבנו ב-Gemini ממיין קורות חיים אישי: הוא עובד לפי הקריטריונים שאתן קובעות, מחזיר טבלה מדורגת עם נימוקים, ונשאר אצלכן לכל משרה עתידית.</p>
+    <div class="bx-hero-tags">
+      <span class="bx-tag">4 שלבים קצרים</span>
+      <span class="bx-tag">בלי ידע טכני</span>
+      <span class="bx-tag">חשבון Gemini רגיל מספיק</span>
+    </div>
+    <div class="bx-hero-cta">
+      <button class="bx-btn bx-btn-primary" data-go="1">מתחילים ←</button>
+      <span class="bx-hero-hint">ההתקדמות נשמרת בדפדפן שלכן.</span>
+    </div>
+  </div>
+
+  <div class="bx-panel">
+    <div class="bx-panel-kicker">מה בונים כאן</div>
+    <h2 class="bx-panel-title">ממיין הקורות חיים שלי</h2>
+    <p class="bx-panel-text">דוגמה אחת מלווה את כל המדריך: משרת Full Stack Developer שקיבלה 120 הגשות. בסוף יהיה לכן Gem ששואל רק שני דברים: מה המשרה, ואיפה הקבצים.</p>
+    <div class="bx-io">
+      <div class="bx-io-cell"><b>קלט</b><span>תיאור משרה + ערימת קבצי קורות חיים</span></div>
+      <div class="bx-io-arrow" aria-hidden="true">←</div>
+      <div class="bx-io-cell"><b>פלט</b><span>טבלה מדורגת, דגלים אדומים, ושאלת אימות לכל מועמד מוביל</span></div>
+    </div>
+  </div>
+
+  <div class="bx-note">
+    <b>רגע, פרטיות</b>
+    <p>קורות חיים הם מידע אישי. אם יש לכן חשבון Google Workspace ארגוני, עבדו דרכו: התוכן לא משמש לאימון מודלים. בחשבון פרטי, כבו את "פעילות באפליקציות Gemini" בהגדרות לפני שמעלים קבצים.</p>
+  </div>
+
+  <div class="bx-next"><button class="bx-btn bx-btn-primary" data-go="1">שלב 1 ←</button></div>
+</section>
+
+<!-- ===================== 1 · מחוון ===================== -->
+<section class="bx-view" id="v1" data-step="1">
+  <div class="bx-step-pill">שלב 1 מתוך 4</div>
+  <h2 class="bx-h1">בונים מחוון סינון מהמשרה</h2>
+  <p class="bx-lead">AI שמסנן "לפי תחושה" ממציא קריטריונים בעצמו. כאן את קובעת את הקריטריונים, והוא רק מיישם אותם.</p>
+
+  <div class="bx-card">
+    <div class="bx-card-kicker">מה עושים</div>
+    <h3>פותחים את Gemini ומדביקים את הפרומפט</h3>
+    <ol class="bx-steps">
+      <li><b>פותחים</b><span>נכנסים אל gemini.google.com ופותחים שיחה חדשה.</span></li>
+      <li><b>מעתיקים</b><span>לוחצים על כפתור ההעתקה בפרומפט שלמטה.</span></li>
+      <li><b>מדביקים ומשלימים</b><span>מדביקים בשיחה, ובמקום השורה האחרונה מדביקים את תיאור המשרה האמיתי שלכן.</span></li>
+    </ol>
+  </div>
+
+  <div class="bx-prompt">
+    <div class="bx-prompt-head"><span>פרומפט מוכן להעתקה: בניית מחוון</span>
+      <button class="bx-copy" type="button" aria-label="העתקה">⧉ העתקה</button></div>
+    <pre class="bx-code">אני מגייסת ומצרפת למטה תיאור משרה.
+בנה לי מחוון סינון קורות חיים עבור המשרה הזו:
+1. עד 5 דרישות סף (must have): דברים שבלעדיהם המועמד לא רלוונטי.
+2. עד 5 יתרונות (nice to have).
+3. עד 4 דגלים אדומים שכדאי לשים לב אליהם.
+4. משקל באחוזים לכל דרישת סף ויתרון, כך שהסכום הוא 100%.
+הצג את המחוון כטבלה.
+אל תמציא דרישות שלא מופיעות בתיאור המשרה. אם משהו חסר או לא ברור, שאל אותי לפני שתסיים.
+
+תיאור המשרה:
+[הדביקו כאן את תיאור המשרה שלכן]</pre>
+  </div>
+
+  <div class="bx-card">
+    <div class="bx-card-kicker">הרגע החשוב</div>
+    <h3>עוברים על המחוון ומתקנים אותו</h3>
+    <p>זה השלב שבו הניסיון שלך נכנס לתמונה. Gemini בנה טיוטה, את עורכת ראשית:</p>
+    <ul class="bx-list">
+      <li>דרישה שמופיעה כיתרון אבל אצלך היא סף? כתבו לו: "העבר את X לדרישות סף".</li>
+      <li>בדוגמה שלנו: Gemini שם את React כיתרון, אבל בצוות הזה זה תנאי. שורה אחת בצ'אט מתקנת את זה.</li>
+      <li>משהו לא חשוב? "מחק את Y והעבר את המשקל לניסיון מעשי".</li>
+    </ul>
+  </div>
+
+  <div class="bx-checks" data-step="1">
+    <div class="bx-checks-title">סמנו מה עשיתן</div>
+    <label class="bx-check"><input type="checkbox" data-step="1"><span>הדבקתי את הפרומפט עם תיאור משרה אמיתי וקיבלתי מחוון</span></label>
+    <label class="bx-check"><input type="checkbox" data-step="1"><span>עברתי על המחוון ותיקנתי לפחות קריטריון אחד</span></label>
+  </div>
+
+  <div class="bx-next"><button class="bx-btn bx-btn-primary" data-go="2">שלב 2 ←</button></div>
+</section>
+
+<!-- ===================== 2 · הזנת הערימה ===================== -->
+<section class="bx-view" id="v2" data-step="2">
+  <div class="bx-step-pill">שלב 2 מתוך 4</div>
+  <h2 class="bx-h1">מזינים את ערימת הקורות חיים</h2>
+  <p class="bx-lead">עכשיו המחוון פוגש את הערימה. כל מועמד נמדד מול אותם קריטריונים בדיוק.</p>
+
+  <div class="bx-card">
+    <div class="bx-card-kicker">מה עושים</div>
+    <h3>מעלים את הקבצים לאותה שיחה</h3>
+    <ol class="bx-steps">
+      <li><b>מצרפים</b><span>לוחצים על סימן הפלוס ליד תיבת ההקלדה ובוחרים את קבצי ה-PDF, או פשוט גוררים אותם לשיחה.</span></li>
+      <li><b>מנות קטנות</b><span>אם הערימה גדולה, עבדו במנות של עד 10 קבצים בכל הודעה. מבקשים מ-Gemini להוסיף כל מנה לאותה טבלה מצטברת.</span></li>
+      <li><b>מריצים</b><span>מדביקים את פרומפט הדירוג שלמטה ושולחים.</span></li>
+    </ol>
+  </div>
+
+  <div class="bx-prompt">
+    <div class="bx-prompt-head"><span>פרומפט מוכן להעתקה: דירוג מועמדים</span>
+      <button class="bx-copy" type="button" aria-label="העתקה">⧉ העתקה</button></div>
+    <pre class="bx-code">מצורפים קורות חיים של מועמדים למשרה.
+דרג כל מועמד לפי המחוון שבנינו, לפי הכללים האלה:
+1. ציון 0 עד 100 לפי המשקולות במחוון.
+2. ציין לכל מועמד אילו דרישות סף מתקיימות ואילו חסרות, עם ציטוט קצר מקורות החיים כהוכחה.
+3. אל תניח שום דבר שלא כתוב בקורות החיים. אם מידע חסר, כתוב "לא מופיע" במקום לנחש.
+4. מועמד שחסרה לו דרישת סף לא יכול לקבל ציון מעל 60.
+הצג טבלה עם העמודות: שם, ציון, דרישות סף חסרות, נימוק בשורה אחת.
+מיין מהציון הגבוה לנמוך.</pre>
+  </div>
+
+  <div class="bx-note">
+    <b>למה הכלל של ה-60?</b>
+    <p>בלי תקרה, מועמד מרשים בלי דרישת סף קריטית מקבל 85 ומדלג מעל מועמדת מתאימה אבל צנועה. התקרה כופה על המודל לקחת את דרישות הסף שלך ברצינות.</p>
+  </div>
+
+  <div class="bx-checks" data-step="2">
+    <div class="bx-checks-title">סמנו מה עשיתן</div>
+    <label class="bx-check"><input type="checkbox" data-step="2"><span>העליתי את קבצי הקורות חיים לשיחה</span></label>
+    <label class="bx-check"><input type="checkbox" data-step="2"><span>הרצתי את פרומפט הדירוג וקיבלתי טבלה ממוינת</span></label>
+  </div>
+
+  <div class="bx-next"><button class="bx-btn bx-btn-primary" data-go="3">שלב 3 ←</button></div>
+</section>
+
+<!-- ===================== 3 · שורטליסט ובדיקה ===================== -->
+<section class="bx-view" id="v3" data-step="3">
+  <div class="bx-step-pill">שלב 3 מתוך 4</div>
+  <h2 class="bx-h1">מקבלים שורטליסט, ובודקים אותו</h2>
+  <p class="bx-lead">טבלה של 120 שורות היא עדיין לא החלטה. עכשיו מצמצמים לחמישה, ומוודאים שהמודל לא המציא.</p>
+
+  <div class="bx-prompt">
+    <div class="bx-prompt-head"><span>פרומפט מוכן להעתקה: שורטליסט</span>
+      <button class="bx-copy" type="button" aria-label="העתקה">⧉ העתקה</button></div>
+    <pre class="bx-code">מתוך כל המועמדים שדירגת, בנה שורטליסט של חמשת המובילים.
+לכל מועמד בשורטליסט הוסף:
+1. נימוק בשורה אחת: למה דווקא הוא.
+2. דגלים אדומים אם יש: פערי תעסוקה, החלפות תכופות, חוסר התאמה בין הכותרת לניסיון בפועל.
+3. שאלת אימות אחת לשיחת הטלפון הראשונה: שאלה שבודקת את הנקודה הכי פחות בטוחה בקורות החיים שלו.</pre>
+  </div>
+
+  <div class="bx-card bx-card-warn">
+    <div class="bx-card-kicker">חובה לפני שממשיכים</div>
+    <h3>בדיקת אמת אחת: ה-AI לא ממציא?</h3>
+    <p>מודלים טועים בביטחון מלא. לפני שסומכים על השורטליסט, דקה אחת של ביקורת:</p>
+    <ol class="bx-steps">
+      <li><b>בוחרים</b><span>מועמד אחד מהשורטליסט.</span></li>
+      <li><b>פותחים</b><span>את קובץ הקורות חיים המקורי שלו.</span></li>
+      <li><b>משווים</b><span>הציטוט שהמודל הביא באמת מופיע שם? שנות הניסיון נכונות?</span></li>
+    </ol>
+    <p>מצאתן אי דיוק? כותבות בצ'אט: "ציטטת X לגבי המועמד הזה וזה לא מופיע בקובץ. תקן את הדירוג והסבר מה השתנה." ובודקות שוב.</p>
+  </div>
+
+  <div class="bx-checks" data-step="3">
+    <div class="bx-checks-title">סמנו מה עשיתן</div>
+    <label class="bx-check"><input type="checkbox" data-step="3"><span>קיבלתי שורטליסט של 5 עם נימוקים ושאלות אימות</span></label>
+    <label class="bx-check"><input type="checkbox" data-step="3"><span>השוויתי מועמד אחד מול הקובץ המקורי שלו</span></label>
+  </div>
+
+  <div class="bx-next"><button class="bx-btn bx-btn-primary" data-go="4">שלב 4 ←</button></div>
+</section>
+
+<!-- ===================== 4 · Gem ===================== -->
+<section class="bx-view" id="v4" data-step="4">
+  <div class="bx-step-pill">שלב 4 מתוך 4</div>
+  <h2 class="bx-h1">הופכים את התהליך ל-Gem קבוע</h2>
+  <p class="bx-lead">עד עכשיו זו הייתה שיחה חד פעמית. Gem הופך אותה לכלי עבודה: פותחים, מדביקים משרה, גוררים קבצים, מקבלים שורטליסט.</p>
+
+  <div class="bx-card">
+    <div class="bx-card-kicker">מה עושים</div>
+    <h3>יוצרים Gem חדש</h3>
+    <ol class="bx-steps">
+      <li><b>פותחים</b><span>בתפריט הצד של Gemini בוחרים Explore Gems, ואז New Gem.</span></li>
+      <li><b>שם</b><span>"ממיין הקורות חיים שלי".</span></li>
+      <li><b>הנחיות</b><span>מדביקים בשדה ההנחיות (Instructions) את הטקסט שלמטה.</span></li>
+      <li><b>שומרים</b><span>מהיום ה-Gem מופיע בתפריט הצד, זמין לכל משרה.</span></li>
+    </ol>
+  </div>
+
+  <div class="bx-prompt">
+    <div class="bx-prompt-head"><span>מוכן להעתקה: הנחיות ה-Gem</span>
+      <button class="bx-copy" type="button" aria-label="העתקה">⧉ העתקה</button></div>
+    <pre class="bx-code">אתה עוזר סינון קורות חיים של מגייסת. ענה תמיד בעברית, והצג תוצאות בטבלאות.
+
+כשאני שולחת תיאור משרה: בנה מחוון סינון עם עד 5 דרישות סף, עד 5 יתרונות, עד 4 דגלים אדומים, ומשקל באחוזים לכל פריט (סכום 100%). הצג את המחוון ועצור. חכה לאישור או לתיקונים שלי לפני שתמשיך.
+
+כשאני מעלה קורות חיים: דרג כל מועמד לפי המחוון המאושר. לכל מועמד: ציון 0 עד 100 לפי המשקולות, אילו דרישות סף חסרות, ציטוט קצר מקורות החיים כהוכחה, ונימוק בשורה אחת. מועמד שחסרה לו דרישת סף לא יכול לקבל ציון מעל 60. אל תניח מידע שלא כתוב בקורות החיים. אם מידע חסר, כתוב "לא מופיע". אם אני מעלה קבצים בכמה מנות, הוסף כל מנה לאותה טבלה מצטברת.
+
+כשאני מבקשת שורטליסט: החזר את חמשת המובילים, לכל אחד נימוק בשורה אחת, דגלים אדומים אם יש, ושאלת אימות אחת לריאיון טלפוני שבודקת את הנקודה הכי פחות בטוחה בקורות החיים שלו.</pre>
+  </div>
+
+  <div class="bx-note">
+    <b>הבדיקה האמיתית</b>
+    <p>הריצו עכשיו משרה אמיתית אחת דרך ה-Gem, מההתחלה: תיאור משרה, אישור מחוון, קבצים, שורטליסט. אם משהו בתהליך מרגיש לא מדויק למשרות שלכן, עורכים את ההנחיות של ה-Gem פעם אחת וזה מתוקן לתמיד.</p>
+  </div>
+
+  <div class="bx-checks" data-step="4">
+    <div class="bx-checks-title">סמנו מה עשיתן</div>
+    <label class="bx-check"><input type="checkbox" data-step="4"><span>יצרתי Gem עם ההנחיות המלאות</span></label>
+    <label class="bx-check"><input type="checkbox" data-step="4"><span>הרצתי משרה אמיתית אחת דרך ה-Gem מההתחלה ועד שורטליסט</span></label>
+  </div>
+
+  <div class="bx-next"><button class="bx-btn bx-btn-primary" data-go="5">לסיכום ←</button></div>
+</section>
+
+<!-- ===================== 5 · סיכום ===================== -->
+<section class="bx-view" id="v5" data-step="5">
+  <div class="bx-step-pill">סיכום</div>
+  <h2 class="bx-h1">יש לכן עכשיו ממיין קורות חיים משלכן</h2>
+  <p class="bx-lead">10 דקות של עבודה, וכלי שנשאר לכל משרה מהיום והלאה.</p>
+
+  <div class="bx-card">
+    <div class="bx-card-kicker">מה בניתן</div>
+    <h3>התהליך המלא, בארבע שורות</h3>
+    <ul class="bx-list">
+      <li>מחוון סינון שאת קובעת, לא המודל. הניסיון שלך נשאר בהגה.</li>
+      <li>דירוג שקוף: ציון, הוכחה מצוטטת, ומה חסר. בלי "תחושת בטן" של אלגוריתם.</li>
+      <li>בדיקת אמת קבועה נגד המצאות של המודל.</li>
+      <li>Gem אחד שעוטף את הכול: מדביקים משרה, גוררים קבצים, מקבלים שורטליסט.</li>
+    </ul>
+  </div>
+
+  <div class="bx-panel">
+    <div class="bx-panel-kicker">ומה הכלי הזה לא פותר</div>
+    <h2 class="bx-panel-title">סינון ממיין את מי שהגיש. הטובים ביותר בדרך כלל לא הגישו.</h2>
+    <p class="bx-panel-text">במשרות תחרותיות, המועמדים שהכי מתאימים למשרה שלכן מועסקים היום, לא מחפשים, ולא יראו את המודעה. שורטליסט מצוין מתוך ערימה בינונית הוא עדיין שורטליסט מתוך ערימה בינונית. סינון חכם הוא חצי מהעבודה. החצי השני הוא להגיע אל מי שלא נמצא בערימה בכלל, וזה כבר סורסינג.</p>
+  </div>
+
+  <div class="bx-finish">
+    <button class="bx-btn bx-btn-primary" id="bxFinish" type="button">סיימתי, סמנו הכול ✓</button>
+    <button class="bx-btn bx-btn-ghost" data-go="0">חזרה להתחלה</button>
+  </div>
+</section>
+
+</main>
+
+<div class="bx-toast" id="bxToast" role="status" aria-live="polite"></div>
+
+<script src="app.js?v=1"></script>
+</body>
+</html>
