@@ -467,6 +467,48 @@ code {
 }
 .bx-note b { display: block; font-size: 14.5px; margin-bottom: 4px; }
 .bx-note p { margin: 0; font-size: 14px; color: var(--bx-ink-soft); }
+.bx-note p + p { margin-top: 8px; }
+
+/* Example job-description text inside a note */
+.bx-example {
+  background: var(--bx-surface);
+  border: 1px solid var(--bx-line);
+  border-radius: var(--bx-r-sm);
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--bx-ink) !important;
+}
+
+/* ---------- Table (example output) ---------- */
+.bx-table-wrap {
+  margin: 12px 0 4px;
+  overflow-x: auto;
+  border: 1px solid var(--bx-line);
+  border-radius: var(--bx-r-sm);
+}
+.bx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: start;
+}
+.bx-table thead th {
+  background: var(--bx-violet-wash);
+  color: var(--bx-violet-deep);
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 9px 12px;
+  text-align: start;
+  white-space: nowrap;
+}
+.bx-table tbody td {
+  padding: 9px 12px;
+  border-top: 1px solid var(--bx-line-soft);
+  color: var(--bx-ink-soft);
+  vertical-align: top;
+}
+.bx-table tbody tr:nth-child(even) { background: var(--bx-violet-wash-2); }
+.bx-table td:last-child, .bx-table th:last-child { white-space: nowrap; font-weight: 600; color: var(--bx-ink); }
 
 /* ---------- Prompt / code block with copy ---------- */
 .bx-prompt {
