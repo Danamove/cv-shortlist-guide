@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Source card for og-image.png. Render at exactly 1200x630:
+     playwright-cli open http://localhost:8000/og.html
+     playwright-cli run-code "async page => { await page.setViewportSize({width:1200,height:630}); await page.screenshot({path:'og-image.png'}); }" -->
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #22104d 0%, #3a1d86 55%, #5b2fd1 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  .card { padding: 0 96px; width: 100%; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 26px;
+    font-weight: 700;
+    color: #cdbcff;
+    letter-spacing: .02em;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.18;
+    margin-bottom: 30px;
+  }
+  h1 .grad {
+    background: linear-gradient(90deg, #cdbcff, #a385ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sub { font-size: 33px; color: #e4daff; line-height: 1.45; margin-bottom: 44px; max-width: 980px; }
+  .tags { display: flex; gap: 16px; }
+  .tag {
+    font-size: 26px;
+    font-weight: 600;
+    color: #f1ecff;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(205,188,255,.5);
+    border-radius: 999px;
+    padding: 12px 28px;
+  }
+  .mark {
+    position: fixed;
+    inset-inline-start: 96px;
+    bottom: 52px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #cdbcff;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="eyebrow">מדריך אינטראקטיבי למגייסות ומנהלות HR</span>
+    <h1>מערימת קורות חיים לשורטליסט <span class="grad">ב-10 דקות</span></h1>
+    <p class="sub">בונות ב-Gemini ממיין קורות חיים אישי: טבלה מדורגת, דגלים אדומים, ושאלת אימות לכל מועמד מוביל.</p>
+    <div class="tags">
+      <span class="tag">4 שלבים קצרים</span>
+      <span class="tag">בלי ידע טכני</span>
+      <span class="tag">חינם</span>
+    </div>
+  </div>
+  <div class="mark">◆ danamove.github.io</div>
+</body>
+</html>
